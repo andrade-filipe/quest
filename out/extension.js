@@ -38,7 +38,7 @@ const vscode = __importStar(require("vscode"));
 function activate(context) {
     console.log('Extensão QuestLang ativada.');
     // Cria uma coleção de diagnósticos para a QuestLang
-    const diagnosticCollection = vscode.languages.createDiagnosticCollection('questlang');
+    const diagnosticCollection = vscode.languages.createDiagnosticCollection('quest');
     // Atualiza os diagnósticos quando abrir um arquivo .quest ou quando ele for alterado
     if (vscode.window.activeTextEditor) {
         updateDiagnostics(vscode.window.activeTextEditor.document, diagnosticCollection);

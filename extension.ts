@@ -3,7 +3,7 @@ import * as vscode from 'vscode';
 export function activate(context: vscode.ExtensionContext) {
   console.log('Extensão QuestLang ativada.');
   // Cria uma coleção de diagnósticos para a QuestLang
-  const diagnosticCollection = vscode.languages.createDiagnosticCollection('questlang');
+  const diagnosticCollection = vscode.languages.createDiagnosticCollection('quest');
   
   // Atualiza os diagnósticos quando abrir um arquivo .quest ou quando ele for alterado
   if (vscode.window.activeTextEditor) {
@@ -13,6 +13,7 @@ export function activate(context: vscode.ExtensionContext) {
   context.subscriptions.push(
     vscode.workspace.onDidChangeTextDocument(e => updateDiagnostics(e.document, diagnosticCollection))
   );
+
   context.subscriptions.push(
     vscode.workspace.onDidOpenTextDocument(doc => updateDiagnostics(doc, diagnosticCollection))
   );
@@ -25,7 +26,6 @@ function updateDiagnostics(document: vscode.TextDocument, collection: vscode.Dia
     console.log('LanguageId incompatível, ignorando.');
     return;
   }
-
 
   const diagnostics: vscode.Diagnostic[] = [];
   const parser = new QuestLangParser(document.getText());

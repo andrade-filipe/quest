@@ -18,7 +18,6 @@
       {
         "id": "quest",
         "aliases": [
-          "questlang",
           "quest"
         ],
         "extensions": [
