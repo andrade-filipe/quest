@@ -1,0 +1,107 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "quest",
+	"scopeName": "main.quest",
+	"patterns": [
+	  { "include": "#comments" },
+	  { "include": "#strings" },
+	  { "include": "#keywords" },
+	  { "include": "#movement" },
+	  { "include": "#action" },
+	  { "include": "#arithmetic" },
+	  { "include": "#logical" },
+	  { "include": "#numbers" },
+	  { "include": "#identifiers" },
+	  { "include": "#punctuation" }
+	],
+	"repository": {
+	  "comments": {
+		"patterns": [
+		  {
+			"name": "comment.line.double-slash.quest",
+			"match": "//.*$"
+		  }
+		]
+	  },
+	  "strings": {
+		"name": "string.quoted.double.quest",
+		"begin": "\"",
+		"end": "\"",
+		"patterns": [
+		  {
+			"name": "constant.character.escape.quest",
+			"match": "\\\\."
+		  }
+		]
+	  },
+	  "keywords": {
+		"patterns": [
+		  {
+			"name": "keyword.control.quest",
+			"match": "\\b(if|else|while|for)\\b"
+		  }
+		]
+	  },
+	  "movement": {
+		"patterns": [
+		  {
+			"name": "keyword.command.movement.quest",
+			"match": "\\b(move_up|move_down|move_left|move_right)\\b"
+		  }
+		]
+	  },
+	  "action": {
+		"patterns": [
+		  {
+			"name": "keyword.command.action.quest",
+			"match": "\\b(jump|attack|defend)\\b"
+		  }
+		]
+	  },
+	  "arithmetic": {
+		"patterns": [
+		  {
+			"name": "keyword.operator.arithmetic.quest",
+			"match": "[+\\-*/]"
+		  }
+		]
+	  },
+	  "logical": {
+		"patterns": [
+		  {
+			"name": "keyword.operator.logical.quest",
+			"match": "(&&|\\|\\||!)"
+		  }
+		]
+	  },
+	  "numbers": {
+		"patterns": [
+		  {
+			"name": "constant.numeric.quest",
+			"match": "\\b\\d+\\b"
+		  }
+		]
+	  },
+	  "identifiers": {
+		"patterns": [
+		  {
+			"name": "variable.language.reserved.quest",
+			"match": "\\b(hero|enemy|treasure|trap)\\b"
+		  }
+		]
+	  },
+	  "punctuation": {
+		"patterns": [
+		  {
+			"name": "punctuation.parenthesis.quest",
+			"match": "[()]"
+		  },
+		  {
+			"name": "punctuation.brace.quest",
+			"match": "[{}]"
+		  }
+		]
+	  }
+	}
+  }
+  

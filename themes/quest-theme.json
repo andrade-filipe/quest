@@ -1,0 +1,47 @@
+{
+    "name": "Meu Tema QuestLang",
+    "colors": {
+      "editor.foreground": "#F8F8F2",
+      "editor.background": "#272822"
+    },
+    "tokenColors": [
+      {
+        "scope": "keyword.control.quest",
+        "settings": {
+          "foreground": "#66D9EF"
+        }
+      },
+      {
+        "scope": "string.quoted.double.quest",
+        "settings": {
+          "foreground": "#E6DB74"
+        }
+      },
+      {
+        "scope": "keyword.command.movement.quest",
+        "settings": {
+          "foreground": "#A6E22E"
+        }
+      },
+      {
+        "scope": "keyword.command.action.quest",
+        "settings": {
+          "foreground": "#FD971F"
+        }
+      },
+      {
+        "scope": "constant.numeric.quest",
+        "settings": {
+          "foreground": "#AE81FF"
+        }
+      },
+      {
+        "scope": "comment.line.double-slash.quest",
+        "settings": {
+          "foreground": "#75715E",
+          "fontStyle": "italic"
+        }
+      }
+    ]
+  }
+  

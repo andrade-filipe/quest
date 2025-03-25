@@ -1,0 +1,56 @@
+{
+  "name": "quest",
+  "displayName": ".quest",
+  "description": "questlang text highlight and syntatic analysis",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.98.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "main": "./out/extension.ts",
+  "activationEvents": [
+    "onLanguage:quest"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "quest",
+        "aliases": [
+          "questlang",
+          "quest"
+        ],
+        "extensions": [
+          ".quest"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "quest",
+        "scopeName": "main.quest",
+        "path": "./syntaxes/quest.tmLanguage.json"
+      }
+    ],
+    "themes": [
+      {
+        "label": "Quest Theme",
+        "uiTheme": "vs-dark",
+        "path": "./themes/quest-theme.json"
+      }
+    ]
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.98.0",
+    "@vscode/vsce": "3.3.0",
+    "typescript": "5.8.2"
+  },
+  "scripts": {
+    "compile": "tsc -p ."
+  },
+  "dependencies": {
+    "quest": "file:"
+  }
+}
