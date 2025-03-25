@@ -9,7 +9,7 @@
   "categories": [
     "Programming Languages"
   ],
-  "main": "./out/extension.ts",
+  "main": "./out/extension.js",
   "activationEvents": [
     "onLanguage:quest"
   ],
