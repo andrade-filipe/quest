@@ -11,9 +11,14 @@ export function activate(context: vscode.ExtensionContext) {
 }
 
 function updateDiagnostics(doc: vscode.TextDocument, collection: vscode.DiagnosticCollection) {
-  if (doc.languageId !== 'quest') return;
+  if (doc.languageId !== 'quest') {
+    collection.delete(doc.uri);
+    return;
+  }
+
   const parser = new QuestLangParser(doc.getText());
   const errors = parser.parse();
+
   const diagnostics = errors.map(e => {
     const start = doc.positionAt(e.position);
     const end = doc.positionAt(e.position + e.length);

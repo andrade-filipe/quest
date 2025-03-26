@@ -11,14 +11,14 @@
   ],
   "main": "./out/extension.js",
   "activationEvents": [
-    "onLanguage:quest"
+    "onFileSystem:*.quest"
   ],
   "contributes": {
     "languages": [
       {
         "id": "quest",
         "aliases": [
-          "quest"
+          "Quest"
         ],
         "extensions": [
           ".quest"
@@ -43,7 +43,7 @@
   },
   "devDependencies": {
     "@types/vscode": "^1.98.0",
-    "@vscode/vsce": "3.3.0",
+    "@vscode/vsce": "3.3.1",
     "typescript": "5.8.2"
   },
   "scripts": {

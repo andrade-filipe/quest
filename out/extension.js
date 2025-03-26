@@ -40,8 +40,10 @@ function activate(context) {
     context.subscriptions.push(vscode.workspace.onDidChangeTextDocument(e => updateDiagnostics(e.document, diagnostics)), vscode.workspace.onDidOpenTextDocument(doc => updateDiagnostics(doc, diagnostics)), diagnostics);
 }
 function updateDiagnostics(doc, collection) {
-    if (doc.languageId !== 'quest')
+    if (doc.languageId !== 'quest') {
+        collection.delete(doc.uri);
         return;
+    }
     const parser = new QuestLangParser(doc.getText());
     const errors = parser.parse();
     const diagnostics = errors.map(e => {
